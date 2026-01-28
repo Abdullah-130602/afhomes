@@ -1,15 +1,12 @@
-import Navbar from "./layout/navbar";
-import Footer from "./components/footer";
 import Landing_Page from "./pages/home/index";
+import Layout from "./layout/index";
 
 export default function Home() {
   return (
     <div>
-      <Navbar />
-      <Landing_Page />
-      {/* Footer */}
-      <Footer />
+      <Layout>
+        <Landing_Page />
+      </Layout>
     </div>
   );
 }
-

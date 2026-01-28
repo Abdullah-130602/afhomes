@@ -109,7 +109,7 @@ const Footer = () => {
                 Get the latest property listings and real estate insights delivered to your inbox.
               </p>
             </div>
-            <div className="flex gap-2">
+            <div className="flex flex-col md:flex-row gap-2">
               <input
                 type="email"
                 placeholder="Enter your email"

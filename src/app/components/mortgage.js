@@ -1,7 +1,7 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { motion } from 'framer-motion'
+import React from "react";
+import { motion } from "framer-motion";
 
 const Mortgage = () => {
   const containerVariants = {
@@ -13,7 +13,7 @@ const Mortgage = () => {
         delayChildren: 0.1,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -22,10 +22,10 @@ const Mortgage = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: 'easeOut',
+        ease: "easeOut",
       },
     },
-  }
+  };
 
   return (
     <section className="py-12 px-6 bg-white">
@@ -59,7 +59,8 @@ const Mortgage = () => {
               variants={itemVariants}
               className="text-base text-gray-700 mb-6 leading-relaxed max-w-lg"
             >
-              Speak to our in-house mortgage team today and get access the best rates in the UAE.
+              Speak to our in-house mortgage team today and get access the best
+              rates in the UAE.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -69,9 +70,9 @@ const Mortgage = () => {
             >
               <motion.button
                 className="px-6 py-2.5 bg-[#00263a] text-white font-semibold rounded-full text-sm"
-                whileHover={{ scale: 1.05, backgroundColor: '#1f2937' }}
+                whileHover={{ scale: 1.05, backgroundColor: "#1f2937" }}
                 whileTap={{ scale: 0.95 }}
-                transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
                 Speak to the team
               </motion.button>
@@ -90,7 +91,7 @@ const Mortgage = () => {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true }}
             className="relative h-56 md:h-72 rounded-xl overflow-hidden"
           >
@@ -99,24 +100,11 @@ const Mortgage = () => {
               alt="Luxury home interior"
               className="w-full h-full object-cover"
             />
-            
-            {/* Chat Widget Overlay */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="absolute bottom-4 right-4 bg-white rounded-lg shadow-lg p-3 max-w-xs"
-            >
-              <p className="text-gray-800 font-medium text-xs">
-                Hey, how can we help you today?
-              </p>
-            </motion.div>
           </motion.div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Mortgage
+export default Mortgage;
