@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
+import Splash from "./components/splash";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased font-poppins`}
       >
+        <Splash />
         {children}
       </body>
     </html>

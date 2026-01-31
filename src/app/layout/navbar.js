@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import whiteLogo from "../../assets/logo.png";
 import logoBlack from "../../assets/logoBlack.png";
 import { FaWhatsapp, FaBars, FaTimes } from "react-icons/fa";
@@ -12,6 +13,8 @@ import { Drawer } from "antd";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,9 +29,11 @@ const Navbar = () => {
     <motion.nav
       className="fixed top-0 left-0 right-0 z-50 w-full"
       animate={{
-        backgroundColor: isScrolled
-          ? "rgba(255, 255, 255, 0.9)"
-          : "rgba(0, 0, 0, 0.0)",
+        backgroundColor: isHomePage
+          ? isScrolled
+            ? "rgba(255, 255, 255, 0.9)"
+            : "rgba(0, 0, 0, 0.0)"
+          : "rgba(255, 255, 255, 0.9)",
       }}
       transition={{
         duration: 0.3,
@@ -40,22 +45,36 @@ const Navbar = () => {
         <motion.div
           className="text-2xl font-bold"
           animate={{
-            color: isScrolled ? "#000000" : "#ffffff",
+            color: isHomePage
+              ? isScrolled
+                ? "#000000"
+                : "#ffffff"
+              : "#000000",
           }}
           transition={{ duration: 0.3 }}
         >
           <Link href="/">
-            {isScrolled ? (
-              <Image
-                src={logoBlack}
-                alt="AF Homes"
-                width={112}
-                height={40}
-                className="h-10 w-auto"
-              />
+            {isHomePage ? (
+              isScrolled ? (
+                <Image
+                  src={logoBlack}
+                  alt="AF Homes"
+                  width={112}
+                  height={40}
+                  className="h-10 w-auto"
+                />
+              ) : (
+                <Image
+                  src={whiteLogo}
+                  alt="AF Homes"
+                  width={112}
+                  height={40}
+                  className="h-10 w-auto"
+                />
+              )
             ) : (
               <Image
-                src={whiteLogo}
+                src={logoBlack}
                 alt="AF Homes"
                 width={112}
                 height={40}
@@ -81,7 +100,11 @@ const Navbar = () => {
                 <motion.span
                   className="font-medium transition-colors tracking-wide cursor-pointer"
                   animate={{
-                    color: isScrolled ? "#374151" : "#ffffff",
+                    color: isHomePage
+                      ? isScrolled
+                        ? "#374151"
+                        : "#ffffff"
+                      : "#374151",
                   }}
                   transition={{ duration: 0.3 }}
                   whileHover={{ scale: 1.05 }}
@@ -98,9 +121,12 @@ const Navbar = () => {
           <motion.button
             className="px-4 sm:px-6 py-2 rounded md:rounded-full font-medium transition-all flex items-center gap-1 sm:gap-2 text-xs sm:text-base whitespace-nowrap"
             animate={{
-              backgroundColor: isScrolled ? "#25D366" : "#25D366",
+              backgroundColor: isHomePage
+                ? isScrolled
+                  ? "#25D366"
+                  : "#25D366"
+                : "#25D366",
               color: "#ffffff",
-              borderColor: isScrolled ? "#000000" : "#ffffff",
             }}
             transition={{ duration: 0.3 }}
             whileHover={{ scale: 1.05 }}
@@ -113,7 +139,13 @@ const Navbar = () => {
           <button
             onClick={() => setDrawerOpen(true)}
             className="md:hidden p-2 text-white hover:text-gray-300 transition-colors"
-            style={{ color: isScrolled ? "#000000" : "#ffffff" }}
+            style={{
+              color: isHomePage
+                ? isScrolled
+                  ? "#000000"
+                  : "#ffffff"
+                : "#000000",
+            }}
           >
             <FaBars size={24} />
           </button>
@@ -167,7 +199,13 @@ const Navbar = () => {
       {/* Shadow effect when scrolled */}
       <motion.div
         className="absolute bottom-0 left-0 right-0 h-px bg-gray-200"
-        animate={{ opacity: isScrolled ? 1 : 0 }}
+        animate={{
+          opacity: isHomePage
+            ? isScrolled
+              ? 1
+              : 0
+            : 1,
+        }}
         transition={{ duration: 0.3 }}
       />
     </motion.nav>
