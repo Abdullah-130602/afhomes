@@ -1,35 +1,35 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
-import whiteLogo from '../../assets/logo.png'
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import blackLogo from "../../assets/logoBlack.png";
 
 const Splash = () => {
-  const [isVisible, setIsVisible] = useState(true)
-  const [isFirstLoad, setIsFirstLoad] = useState(true)
+  const [isVisible, setIsVisible] = useState(true);
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
 
-  useEffect(() => {
-    // Check if this is the first load
-    const hasVisited = localStorage.getItem('hasVisitedBefore')
-    
-    if (hasVisited) {
-      setIsFirstLoad(false)
-      // Show minimal splash on reload for 3 seconds
-      const timer = setTimeout(() => {
-        setIsVisible(false)
-      }, 3000)
-      return () => clearTimeout(timer)
-    } else {
-      // First load - show full splash for 3 seconds
-      localStorage.setItem('hasVisitedBefore', 'true')
-      setIsFirstLoad(true)
-      const timer = setTimeout(() => {
-        setIsVisible(false)
-      }, 3000)
-      return () => clearTimeout(timer)
-    }
-  }, [])
+//   useEffect(() => {
+//     // Check if this is the first load
+//     const hasVisited = localStorage.getItem("hasVisitedBefore");
+
+//     if (hasVisited) {
+//       setIsFirstLoad(false);
+//       // Show minimal splash on reload for 3 seconds
+//       const timer = setTimeout(() => {
+//         setIsVisible(false);
+//       }, 3000);
+//       return () => clearTimeout(timer);
+//     } else {
+//       // First load - show full splash for 3 seconds
+//       localStorage.setItem("hasVisitedBefore", "true");
+//       setIsFirstLoad(true);
+//       const timer = setTimeout(() => {
+//         setIsVisible(false);
+//       }, 3000);
+//       return () => clearTimeout(timer);
+//     }
+//   }, []);
 
   return (
     <AnimatePresence>
@@ -37,7 +37,7 @@ const Splash = () => {
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.6, ease: 'easeInOut' }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
           className="fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center"
         >
           {/* Animated background elements */}
@@ -52,19 +52,24 @@ const Splash = () => {
             <motion.div
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.2, type: 'spring' }}
+              transition={{ duration: 0.8, delay: 0.2, type: "spring" }}
             >
-              <Image
-                src={whiteLogo}
-                alt="AF Homes"
-                width={160}
-                height={60}
-                className="h-20 w-auto"
-              />
+              <div className="flex flex-col md:flex-row md:items-center gap-5">
+                <Image
+                  src={blackLogo}
+                  alt="AF Homes"
+                  width={160}
+                  height={60}
+                  className="h-20 w-auto md:border-r-2 border-slate-300 rounded-lg"
+                />
+                <p className="text-lg md:text-2xl text-black mb-6 max-w-2xl mt-5">
+                  Your Trusted Partner In Real Estate Excellence
+                </p>
+              </div>
             </motion.div>
 
             {/* Greeting - Only on first load */}
-            <AnimatePresence>
+            {/* <AnimatePresence>
               {isFirstLoad && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -107,10 +112,10 @@ const Splash = () => {
                   </div>
                 </motion.div>
               )}
-            </AnimatePresence>
+            </AnimatePresence> */}
 
             {/* Loading indicator */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: isFirstLoad ? 1.8 : 0.3 }}
@@ -131,12 +136,13 @@ const Splash = () => {
                   }}
                 />
               ))}
-            </motion.div>
+            </motion.div> */}
           </div>
 
           <style jsx>{`
             @keyframes blob {
-              0%, 100% {
+              0%,
+              100% {
                 transform: translate(0, 0) scale(1);
               }
               33% {
@@ -156,7 +162,7 @@ const Splash = () => {
         </motion.div>
       )}
     </AnimatePresence>
-  )
-}
+  );
+};
 
-export default Splash
+export default Splash;

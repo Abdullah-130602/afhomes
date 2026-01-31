@@ -2,63 +2,74 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Aldar from '../../assets/developers/Aldar.png'
+import Azizi from '../../assets/developers/Azizi.png'
+import Binghatti from '../../assets/developers/Binghatti.png'
+import DAMAC from '../../assets/developers/DAMAC.png'
+import Ellington from '../../assets/developers/Ellington.png'
+import Emaar from '../../assets/developers/Emaar.png'
+import Danube from '../../assets/developers/Danube.jpeg'
+import Meraas from '../../assets/developers/Meraas.png'
+import Nakheel from '../../assets/developers/Nakheel.png'
+import OMNIYAT from '../../assets/developers/OMNIYAT.png'
+import Sobha from '../../assets/developers/SOBHA.png'
 
 const Partners = () => {
   const partners = [
     {
       id: 1,
       name: 'Aldar',
-      logo: '/assets/developers/Aldar.png',
+      logo: Aldar,
     },
     {
       id: 2,
       name: 'Azizi',
-      logo: '/assets/developers/Azizi.png',
+      logo: Azizi,
     },
     {
       id: 3,
       name: 'Binghatti',
-      logo: '/assets/developers/Binghatti.png',
+      logo: Binghatti,
     },
     {
       id: 4,
       name: 'DAMAC',
-      logo: '/assets/developers/DAMAC.png',
+      logo: DAMAC,
     },
     {
       id: 5,
       name: 'Ellington',
-      logo: '/assets/developers/Ellington.png',
+      logo: Ellington,
     },
     {
       id: 6,
       name: 'Emaar',
-      logo: '/assets/developers/Emaar.png',
+      logo: Emaar,
     },
     {
       id: 7,
-      name: 'IDFC',
-      logo: '/assets/developers/idbfieDkRD_logos.jpeg',
+      name: 'Danube',
+      logo: Danube,
     },
     {
       id: 8,
       name: 'Meraas',
-      logo: '/assets/developers/Meraas.png',
+      logo: Meraas,
     },
     {
       id: 9,
       name: 'Nakheel',
-      logo: '/assets/developers/Nakheel.png',
+      logo: Nakheel,
     },
     {
       id: 10,
       name: 'OMNIYAT',
-      logo: '/assets/developers/OMNIYAT.png',
+      logo: OMNIYAT,
     },
     {
       id: 11,
       name: 'Sobha',
-      logo: '/assets/developers/Sobha.png',
+      logo: Sobha,
     },
   ]
 
