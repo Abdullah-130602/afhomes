@@ -34,7 +34,7 @@ export default function ContactClient() {
   return (
     <Layout>
       <LayoutHero
-        title="Contact AF Homes"
+        title="Contact A&F Homes"
         subTitle="Talk to a Dubai Property Expert"
         description="Speak directly with our specialist team about buying, selling or renting property in Dubai. We respond quickly on phone, email and WhatsApp."
         heroBg={heroBg}
@@ -50,7 +50,7 @@ export default function ContactClient() {
         >
           <motion.div variants={itemVariants}>
             <h1 className="text-2xl md:text-3xl font-bold text-black mb-4">
-              Get in touch with AF Homes
+              Get in touch with A&F Homes
             </h1>
             <p className="text-base text-gray-600 mb-12">
               Have a question about a property, valuation or the Dubai market?

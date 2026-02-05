@@ -80,7 +80,7 @@ const Navbar = () => {
             <div className="inline-block">
               <Image
                 src={logoToUse}
-                alt="AF Homes"
+                alt="A&F Homes"
                 width={112}
                 height={40}
                 className="h-10 w-auto"
@@ -150,7 +150,7 @@ const Navbar = () => {
       <Drawer
         title={
           <div className="flex items-center">
-            <Image src={logoBlack} alt="AF Homes" className="h-10 w-auto" />
+            <Image src={logoBlack} alt="A&F Homes" className="h-10 w-auto" />
           </div>
         }
         placement="right"

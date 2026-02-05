@@ -67,7 +67,7 @@ export const blogPosts = [
         heading: "3. Work with a trusted advisory team",
         body: [
           "An experienced agency can guide you through viewings, contracts and due diligence, highlighting details that first‑time buyers may overlook.",
-          "At AF Homes, we support you from the initial consultation through to handover and beyond, ensuring you understand each document you sign.",
+          "At A&F Homes, we support you from the initial consultation through to handover and beyond, ensuring you understand each document you sign.",
         ],
       },
     ],

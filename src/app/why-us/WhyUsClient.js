@@ -55,7 +55,7 @@ const WhyUsClient = () => {
       <main className="min-h-screen bg-background">
         {/* Hero Section */}
         <LayoutHero
-          title="Why Choose AF Homes"
+          title="Why Choose A&F Homes"
           subTitle="Dubai Real Estate Experts"
           description="We combine deep Dubai market knowledge with transparent advice, helping buyers, sellers and investors make confident property decisions."
           heroBg={heroBg}
@@ -83,7 +83,7 @@ const WhyUsClient = () => {
                   variants={itemVariants}
                   className="text-2xl md:text-3xl font-bold text-foreground leading-tight"
                 >
-                  About AF Homes
+                  About A&F Homes
                 </motion.h2>
 
                 <motion.p
@@ -115,7 +115,7 @@ const WhyUsClient = () => {
                 <div className="relative overflow-hidden rounded-lg">
                   <img
                     src={team1.src ?? team1}
-                    alt="AF Homes real estate advisors in Dubai"
+                    alt="A&F Homes real estate advisors in Dubai"
                     className="w-full h-auto rounded-lg image-shadow"
                     loading="lazy"
                   />
@@ -129,14 +129,14 @@ const WhyUsClient = () => {
           <Divider />
         </div>
         {/* statistics */}
-        <section aria-label="AF Homes company statistics" className="py-20 bg-slate-100">
+        <section aria-label="A&F Homes company statistics" className="py-20 bg-slate-100">
           <div className="max-w-7xl mx-auto px-6">
             <div>
               <h2 className="text-2xl md:text-4xl font-semibold text-foreground text-center mb-2">
                 Realtors you can count on
               </h2>
               <p className="text-base text-center text-slate-600 max-w-2xl mx-auto mb-4">
-                At AF Homes, our goal is to open doors in Dubai&apos;s most
+                At A&F Homes, our goal is to open doors in Dubai&apos;s most
                 sought‑after communities while protecting your long‑term
                 interests.
               </p>
@@ -233,7 +233,7 @@ const WhyUsClient = () => {
                   variants={itemVariants}
                 >
                   Whether you&apos;re relocating to Dubai or scaling your
-                  investment portfolio, AF Homes gives you the clarity to move
+                  investment portfolio, A&F Homes gives you the clarity to move
                   forward with confidence.
                 </motion.p>
 

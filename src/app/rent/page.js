@@ -1,9 +1,9 @@
 import Layout from "../layout/index";
 
 export const metadata = {
-  title: "Rent Apartments & Villas in Dubai | AF Homes",
+  title: "Rent Apartments & Villas in Dubai | A&F Homes",
   description:
-    "Find premium apartments, villas and townhouses for rent in Dubai. AF Homes helps you secure the right home at the right price.",
+    "Find premium apartments, villas and townhouses for rent in Dubai. A&F Homes helps you secure the right home at the right price.",
   keywords: [
     "rent apartment Dubai",
     "Dubai villas for rent",
@@ -29,7 +29,7 @@ export default function RentPage() {
           {/* Placeholder content - can be expanded */}
           <div className="bg-gray-50 rounded-xl p-8">
             <p className="text-gray-700">
-              Looking for a rental property? AF Homes offers a wide range of rental options 
+              Looking for a rental property? A&F Homes offers a wide range of rental options 
               including apartments, villas, townhouses, and studios. 
               Find the perfect rental property that matches your lifestyle and budget.
             </p>

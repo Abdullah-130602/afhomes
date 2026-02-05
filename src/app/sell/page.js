@@ -1,9 +1,9 @@
 import Layout from "../layout/index";
 
 export const metadata = {
-  title: "Sell Your Property in Dubai | AF Homes",
+  title: "Sell Your Property in Dubai | A&F Homes",
   description:
-    "Sell your apartment or villa in Dubai with AF Homes. Professional valuation, marketing and negotiation to achieve the best market price.",
+    "Sell your apartment or villa in Dubai with A&F Homes. Professional valuation, marketing and negotiation to achieve the best market price.",
   keywords: [
     "sell property Dubai",
     "list my property Dubai",
@@ -23,13 +23,13 @@ export default function SellPage() {
             Sell Your Property
           </h1>
           <p className="text-lg text-gray-600 mb-8">
-            Get the best value for your property with AF Homes expert guidance
+            Get the best value for your property with A&F Homes expert guidance
           </p>
           
           {/* Placeholder content - can be expanded */}
           <div className="bg-gray-50 rounded-xl p-8">
             <p className="text-gray-700">
-              Ready to sell your property? AF Homes provides expert guidance to help you achieve 
+              Ready to sell your property? A&F Homes provides expert guidance to help you achieve 
               the best market value. Our experienced team handles all aspects of the selling process, 
               from property valuation to closing the deal.
             </p>

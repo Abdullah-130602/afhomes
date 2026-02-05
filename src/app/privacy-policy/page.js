@@ -1,11 +1,11 @@
 import PrivacyPolicyClient from "./PrivacyPolicyClient";
 
 export const metadata = {
-  title: "Privacy Policy | AF Homes Dubai Real Estate",
+  title: "Privacy Policy | A&F Homes Dubai Real Estate",
   description:
-    "Read the AF Homes Privacy Policy to understand how we collect, use and protect your data when you browse our website or interact with our Meta and online ads.",
+    "Read the A&F Homes Privacy Policy to understand how we collect, use and protect your data when you browse our website or interact with our Meta and online ads.",
   keywords: [
-    "AF Homes privacy policy",
+    "A&F Homes privacy policy",
     "Dubai real estate privacy",
     "Meta ads data use",
     "cookie policy Dubai real estate",

@@ -1,9 +1,9 @@
 import Layout from "../layout/index";
 
 export const metadata = {
-  title: "Buy Property in Dubai | AF Homes",
+  title: "Buy Property in Dubai | A&F Homes",
   description:
-    "Browse apartments, villas and townhouses for sale in Dubai with AF Homes. Expert advice for end users and investors buying property in the UAE.",
+    "Browse apartments, villas and townhouses for sale in Dubai with A&F Homes. Expert advice for end users and investors buying property in the UAE.",
   keywords: [
     "buy property Dubai",
     "Dubai apartments for sale",
@@ -32,7 +32,7 @@ export default function BuyPage() {
             <p className="text-gray-700">
               Browse through our carefully curated selection of buy properties. 
               Whether you're looking for a luxury apartment, spacious villa, or investment opportunity, 
-              AF Homes has the perfect property for you.
+              A&F Homes has the perfect property for you.
             </p>
           </div>
         </div>

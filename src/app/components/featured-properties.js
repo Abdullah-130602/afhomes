@@ -30,6 +30,8 @@ const FeaturedProperties = () => {
         bedrooms: 2,
         bathrooms: 3,
         sqft: null,
+        agentName: "Amir Khan",
+        agentTitle: "Senior Property Advisor",
         image:
           "https://safe-crystal-32e0edb7ea.media.strapiapp.com/8_converted_ac587e714b.webp",
       },
@@ -41,6 +43,8 @@ const FeaturedProperties = () => {
         bedrooms: 3,
         bathrooms: 3,
         sqft: null,
+        agentName: "Sarah Ali",
+        agentTitle: "Dubai Communities Specialist",
         image:
           "https://safe-crystal-32e0edb7ea.media.strapiapp.com/3_converted_df2e40a0b7.webp",
       },
@@ -52,6 +56,8 @@ const FeaturedProperties = () => {
         bedrooms: 1,
         bathrooms: 2,
         sqft: "737",
+        agentName: "Omar Rahman",
+        agentTitle: "Downtown & JLT Specialist",
         image:
           "https://safe-crystal-32e0edb7ea.media.strapiapp.com/22_converted_3f337d95bb.webp",
       },
@@ -63,6 +69,8 @@ const FeaturedProperties = () => {
         bedrooms: 4,
         bathrooms: 4,
         sqft: "3,500",
+        agentName: "Layla Hassan",
+        agentTitle: "Villa & Townhouse Expert",
         image:
           "https://safe-crystal-32e0edb7ea.media.strapiapp.com/10_10f12df648.jpg",
       },
@@ -76,6 +84,8 @@ const FeaturedProperties = () => {
         bedrooms: 1,
         bathrooms: 1,
         sqft: "600",
+        agentName: "Ahmed Ali",
+        agentTitle: "Leasing Consultant",
         image:
           "https://safe-crystal-32e0edb7ea.media.strapiapp.com/4_e0cf626d29.jpg",
       },
@@ -87,6 +97,8 @@ const FeaturedProperties = () => {
         bedrooms: 2,
         bathrooms: 2,
         sqft: "1,100",
+        agentName: "Maya Noor",
+        agentTitle: "Waterfront Leasing Specialist",
         image:
           "https://safe-crystal-32e0edb7ea.media.strapiapp.com/29_db13dbc3d1.jpg",
       },
@@ -100,6 +112,8 @@ const FeaturedProperties = () => {
         bedrooms: 2,
         bathrooms: 2,
         sqft: "1,050",
+        agentName: "Hassan Malik",
+        agentTitle: "Off-plan Investments",
         image:
           "https://safe-crystal-32e0edb7ea.media.strapiapp.com/6_df3f059786.jpg",
       },
@@ -111,6 +125,8 @@ const FeaturedProperties = () => {
         bedrooms: 3,
         bathrooms: 3,
         sqft: "1,750",
+        agentName: "Rania Yusuf",
+        agentTitle: "Off-plan Communities Specialist",
         image:
           "https://safe-crystal-32e0edb7ea.media.strapiapp.com/Palm_Central_Exteriors_1_7610232155.jpg",
       },
@@ -208,71 +224,98 @@ const FeaturedProperties = () => {
             className="pb-12"
           >
             {currentProperties.map((property) => (
-              <SwiperSlide key={property.id}>
+              <SwiperSlide key={property.id}> 
                 <motion.div
                   whileHover={{ y: -8 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-white border border-gray-200 rounded-lg overflow-hidden h-full flex flex-col"
+                  className="group bg-white/95 border border-gray-200/80 rounded-2xl overflow-hidden h-full flex flex-col shadow-sm hover:shadow-xl hover:border-gray-300/90 transition-all duration-300"
                 >
                   {/* Image */}
-                  <div className="relative h-48 bg-gray-300 overflow-hidden">
+                  <div className="relative h-56 bg-gray-200 overflow-hidden">
                     <img
                       src={property.image}
                       alt={property.title}
-                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs text-white/90">
+                      <span className="inline-flex items-center rounded-full bg-black/50 px-3 py-1">
+                        {property.location.split(",")[0]}
+                      </span>
+                      <span className="rounded-full bg-white/90 text-[#006aa2] px-3 py-1 font-semibold shadow-sm">
+                        {property.price}
+                      </span>
+                    </div>
                   </div>
 
                   {/* Content */}
-                  <div className="flex-1 p-6 flex flex-col">
+                  <div className="flex-1 p-6 flex flex-col gap-3">
                     {/* Title */}
-                    <h3 className="text-md font-bold text-black mb-2 line-clamp-2">
+                    <h3 className="text-base md:text-lg font-semibold text-slate-900 line-clamp-2">
                       {property.title}
                     </h3>
 
-                    {/* Price */}
-                    <p className="text-xl font-bold text-[#006aa2] mb-4">
-                      {property.price}
-                    </p>
-
                     {/* Location */}
-                    <div className="flex items-start gap-2 text-gray-600 text-sm mb-6">
+                    <div className="flex items-start gap-2 text-slate-600 text-sm">
                       <LuMapPinCheckInside />
                       <span className="flex-1">{property.location}</span>
                     </div>
 
                     {/* Property Details */}
-                    <div className="flex gap-6 text-gray-600 text-sm mb-6 pb-6 border-b border-gray-200">
-                      <div className="flex items-center gap-1">
+                    <div className="flex flex-wrap gap-4 text-slate-600 text-sm mb-4 pb-4 border-b border-slate-200">
+                      <div className="flex items-center gap-2">
                         <MdOutlineBedroomChild />
                         <span>{property.bedrooms} bedrooms</span>
                       </div>
-                      <div className="flex items-center gap-1">
+                      <div className="flex items-center gap-2">
                         <LuBath />
                         <span>{property.bathrooms} bathrooms</span>
                       </div>
                       {property.sqft && (
-                        <div className="flex items-center gap-1">
+                        <div className="flex items-center gap-2">
                           <PiMapPinSimpleArea className="text-sm" />
                           <span>{property.sqft} sq.ft</span>
                         </div>
                       )}
                     </div>
 
+                    {/* Agent info */}
+                    <div className="flex items-center justify-between gap-3 mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className="h-9 w-9 rounded-full bg-[#00263a] text-white flex items-center justify-center text-xs font-semibold uppercase shadow-sm">
+                          {property.agentName
+                            ?.split(" ")
+                            .map((n) => n[0])
+                            .join("")}
+                        </div>
+                        <div>
+                          <p className="text-sm font-semibold text-slate-900">
+                            {property.agentName}
+                          </p>
+                          <p className="text-[11px] text-slate-500">
+                            {property.agentTitle}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="hidden md:inline-flex px-2 py-1 rounded-full bg-slate-50 text-[11px] text-slate-500 border border-slate-100">
+                        A&F Homes agent
+                      </span>
+                    </div>
+
                     {/* Action Buttons */}
-                    <div className="flex gap-4 justify-evenly">
+                    <div className="mt-auto flex flex-col sm:flex-row gap-3">
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex-1 flex items-center justify-center gap-2 text-xs text-black font-medium bg-gray-200 p-2 rounded-md hover:text-[#006aa2] transition-colors"
+                        className="flex-1 flex items-center justify-center gap-2 text-xs font-semibold bg-[#00263a] text-white px-3 py-2 rounded-full shadow-sm hover:bg-[#004066] transition-colors"
                       >
                         <MdCall />
-                        Call
+                        Call agent
                       </motion.button>
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex-1 flex items-center justify-center gap-2 text-xs text-black font-medium bg-gray-200 p-2 rounded-md hover:text-[#006aa2] transition-colors"
+                        className="flex-1 flex items-center justify-center gap-2 text-xs font-semibold bg-white text-[#006aa2] border border-[#006aa2]/30 px-3 py-2 rounded-full hover:border-[#006aa2] hover:bg-[#f0f7fb] transition-colors"
                       >
                         <MdMail />
                         Email
@@ -280,7 +323,7 @@ const FeaturedProperties = () => {
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex-1 flex items-center justify-center gap-2 text-xs text-black font-medium bg-gray-200 p-2 rounded-md hover:text-[#006aa2] transition-colors"
+                        className="flex-1 flex items-center justify-center gap-2 text-xs font-semibold bg-[#25D366] text-white px-3 py-2 rounded-full shadow-sm hover:bg-[#1eb257] transition-colors"
                       >
                         <MdWhatsapp />
                         Whatsapp

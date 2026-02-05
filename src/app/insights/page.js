@@ -1,11 +1,12 @@
 import Layout from "../layout/index";
 import Link from "next/link";
 import { blogPosts } from "./data";
+import LayoutHero from "../components/hero";
 
 export const metadata = {
-  title: "Dubai Real Estate Insights & Market News | AF Homes",
+  title: "Dubai Real Estate Insights & Market News | A&F Homes",
   description:
-    "Browse expert articles on the Dubai property market, community guides and investor tips from the AF Homes team.",
+    "Browse expert articles on the Dubai property market, community guides and investor tips from the A&F Homes team.",
   keywords: [
     "Dubai real estate insights",
     "Dubai property market trends",
@@ -20,21 +21,18 @@ export const metadata = {
 export default function InsightsPage() {
   return (
     <Layout>
-      <main className="pt-20 bg-white">
-        <section className="max-w-7xl mx-auto px-6 py-12 md:py-20">
-          <header className="mb-10 md:mb-12">
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-slate-500 mb-3">
-              Insights & Guides
-            </p>
-            <h1 className="text-3xl md:text-5xl font-bold text-black mb-4">
-              Dubai real estate insights
-            </h1>
-            <p className="text-base md:text-lg text-gray-600 max-w-2xl">
-              Market updates, community deep dives and practical advice to help
-              you make confident property decisions in Dubai.
-            </p>
-          </header>
+      {/* No top padding so the navbar sits directly over the hero background */}
+      <main>
+        {/* Hero section for insights listing */}
+        <LayoutHero
+          title="Dubai real estate insights"
+          subTitle="Insights & Guides"
+          description="Market updates, community deep dives and practical advice to help you make confident property decisions in Dubai."
+          heroBg={blogPosts[0]?.image}
+        />
 
+        {/* Listing content on white background below the hero */}
+        <section className="max-w-7xl mx-auto px-6 py-12 md:py-20 bg-white">
           {/* Blog cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (

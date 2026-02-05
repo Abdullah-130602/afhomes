@@ -8,20 +8,20 @@ const FAQ = () => {
 
   const faqData = [
     {
-      question: 'What services does AF Homes provide?',
-      answer: 'AF Homes offers end-to-end real estate services including buying, selling, renting, off-plan investments, and property consultancy across the UAE.',
+      question: 'What services does A&F Homes provide?',
+      answer: 'A&F Homes offers end-to-end real estate services including buying, selling, renting, off-plan investments, and property consultancy across the UAE.',
     },
     {
       question: 'Do you specialize in any specific areas?',
-      answer: 'Yes. AF Homes specializes in Dubai\'s prime and emerging communities, including luxury apartments, villas, townhouses, and high-ROI investment properties.',
+      answer: 'Yes. A&F Homes specializes in Dubai\'s prime and emerging communities, including luxury apartments, villas, townhouses, and high-ROI investment properties.',
     },
     {
       question: 'Do you deal with off-plan properties?',
-      answer: 'Absolutely. AF Homes provides exclusive off-plan projects from trusted UAE developers with flexible payment plans and early-investor benefits.',
+      answer: 'Absolutely. A&F Homes provides exclusive off-plan projects from trusted UAE developers with flexible payment plans and early-investor benefits.',
     },
     {
-      question: 'Can foreigners buy property in Dubai through AF Homes?',
-      answer: 'Yes. UAE allows foreign ownership in designated freehold areas. AF Homes guides international buyers through the entire legal and purchase process.',
+      question: 'Can foreigners buy property in Dubai through A&F Homes?',
+      answer: 'Yes. UAE allows foreign ownership in designated freehold areas. A&F Homes guides international buyers through the entire legal and purchase process.',
     },
     {
       question: 'Do you assist with home loans and mortgages?',
@@ -36,19 +36,19 @@ const FAQ = () => {
       answer: 'You can call or WhatsApp us, fill out the contact form on our website, or send us a direct message on social media. Our team will arrange a viewing at your convenience.',
     },
     {
-      question: 'Why should I choose AF Homes?',
+      question: 'Why should I choose A&F Homes?',
       answer: '✔ Trusted local expertise • ✔ Transparent process • ✔ Strong developer relationships • ✔ Personalized property matching • ✔ Dedicated after-sales support',
     },
     {
       question: 'Do you help with property management?',
-      answer: 'Yes. AF Homes offers property management support, including tenant sourcing, rent collection, and maintenance coordination.',
+      answer: 'Yes. A&F Homes offers property management support, including tenant sourcing, rent collection, and maintenance coordination.',
     },
     {
       question: 'What documents are required to buy a property in Dubai?',
       answer: 'Typically required: Passport copy, Emirates ID (for residents), Proof of funds / mortgage approval. Our team assists you step-by-step.',
     },
     {
-      question: 'How can I contact AF Homes?',
+      question: 'How can I contact A&F Homes?',
       answer: 'Call / WhatsApp us, email us, visit our website, or visit our office in Dubai, UAE. You can customize contact details as needed.',
     },
   ]
@@ -89,7 +89,7 @@ const FAQ = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-base md:text-lg text-gray-600">
-            Everything you need to know about AF Homes services
+            Everything you need to know about A&F Homes services
           </p>
         </motion.div>
 

@@ -21,11 +21,11 @@ const poppins = Poppins({
 export const metadata = {
   metadataBase: new URL("https://www.afhomes.ae"),
   title: {
-    default: "AF Homes | Real Estate in Dubai",
-    template: "%s | AF Homes Dubai",
+    default: "A&F Homes | Real Estate in Dubai",
+    template: "%s | A&F Homes Dubai",
   },
   description:
-    "AF Homes is a premium real estate agency in Dubai helping you buy, sell and rent luxury apartments, villas and off-plan properties across the UAE.",
+    "A&F Homes is a premium real estate agency in Dubai helping you buy, sell and rent luxury apartments, villas and off-plan properties across the UAE.",
   keywords: [
     "Dubai real estate",
     "Dubai properties",
@@ -33,30 +33,30 @@ export const metadata = {
     "rent apartment Dubai",
     "sell property Dubai",
     "off-plan properties Dubai",
-    "AF Homes",
+    "A&F Homes",
   ],
   openGraph: {
     type: "website",
     locale: "en_AE",
     url: "https://www.afhomes.ae",
-    siteName: "AF Homes",
-    title: "AF Homes | Real Estate in Dubai",
+    siteName: "A&F Homes",
+    title: "A&F Homes | Real Estate in Dubai",
     description:
-      "Buy, sell or rent property in Dubai with AF Homes. Expert advice, curated listings and dedicated support for investors and end users.",
+      "Buy, sell or rent property in Dubai with A&F Homes. Expert advice, curated listings and dedicated support for investors and end users.",
     images: [
       {
         url: "/file.svg",
         width: 1200,
         height: 630,
-        alt: "AF Homes Dubai Real Estate",
+        alt: "A&F Homes Dubai Real Estate",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AF Homes | Real Estate in Dubai",
+    title: "A&F Homes | Real Estate in Dubai",
     description:
-      "Premium real estate advisory in Dubai. Explore apartments, villas and investment opportunities with AF Homes.",
+      "Premium real estate advisory in Dubai. Explore apartments, villas and investment opportunities with A&F Homes.",
     images: ["/file.svg"],
   },
   alternates: {

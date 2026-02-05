@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp } from 'react-icons/fa'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -29,18 +30,36 @@ const Footer = () => {
   }
 
   const footerLinks = {
-    Company: ['About Us', 'Careers', 'Blog', 'Press'],
+    Company: ['About Us', 'Blog'],
     Services: ['Buy Property', 'Sell Property', 'Rent Property', 'Off-Plan'],
     Support: ['Contact Us', 'FAQ', 'Properties', 'Legal'],
     Legal: ['Privacy Policy', 'Terms & Conditions', 'Cookie Policy'],
   }
 
+  // Central map of label → route so all columns can share correct links
+  const linkRoutes = {
+    'About Us': '/why-us',
+    Blog: '/insights',
+    'Buy Property': '/buy',
+    'Sell Property': '/sell',
+    'Rent Property': '/rent',
+    'Off-Plan': '/off-plan',
+    'Contact Us': '/contact',
+    FAQ: '/faq',
+    Properties: '/properties',
+    Legal: '/legal',
+    'Privacy Policy': '/privacy-policy',
+    'Terms & Conditions': '/terms-of-service',
+    'Cookie Policy': '/cookie-policy',
+  }
+
   const socialLinks = [
-    { name: 'Facebook', icon: 'f' },
-    { name: 'Instagram', icon: 'I' },
-    { name: 'LinkedIn', icon: 'in' },
-    { name: 'Twitter', icon: 'X' },
+    { name: 'Facebook', href: 'https://www.facebook.com/afhomes.ae', icon: <FaFacebook /> },
+    { name: 'Instagram', href: 'https://www.instagram.com/afhomes.ae', icon: <FaInstagram /> },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/afhomesae', icon: <FaLinkedin /> },
+    { name: 'WhatsApp', href: 'https://wa.me/+971544548731', icon: <FaWhatsapp /> },
   ]
+    
 
   return (
     <footer className="bg-gradient-to-b from-gray-900 to-black text-white pt-20 pb-8">
@@ -55,7 +74,7 @@ const Footer = () => {
         >
           {/* Brand Section */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-2xl font-bold mb-4 text-white">AF Homes</h3>
+            <h3 className="text-2xl font-bold mb-4 text-white">A&F Homes</h3>
             <p className="text-gray-400 mb-6">
               Your trusted partner in finding the perfect property in Dubai and across the UAE.
             </p>
@@ -63,8 +82,9 @@ const Footer = () => {
               {socialLinks.map((social, index) => (
                 <motion.a
                   key={index}
-                  href="#"
-                  className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center text-white hover:bg-gray-600 transition-colors"
+                  href={social.href}
+                  target="_blank"
+                  className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center text-white hover:bg-gray-600 transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -80,13 +100,9 @@ const Footer = () => {
               <h4 className="text-lg font-semibold mb-4 text-white">{column[0]}</h4>
               <ul className="space-y-2">
                 {column[1].map((link, linkIndex) => {
-                  // Use client-side navigation for Legal links
-                  if (column[0] === 'Legal') {
-                    let href = '#'
-                    if (link === 'Privacy Policy') href = '/privacy-policy'
-                    if (link === 'Terms & Conditions') href = '/terms-of-service'
-                    if (link === 'Cookie Policy') href = '/cookie-policy'
+                  const href = linkRoutes[link]
 
+                  if (href) {
                     return (
                       <li key={linkIndex}>
                         <Link
@@ -99,7 +115,7 @@ const Footer = () => {
                     )
                   }
 
-                  // Other columns can remain placeholder links for now
+                  // Fallback placeholder link
                   return (
                     <li key={linkIndex}>
                       <motion.a
@@ -176,8 +192,7 @@ const Footer = () => {
             </div>
             <div>
               <h4 className="font-semibold mb-1">Call Us</h4>
-              <p className="text-gray-400">+971 XX XXX XXXX</p>
-              <p className="text-gray-400">+971 XX XXX XXXX</p>
+              <p className="text-gray-400">+971 54 454 8731</p>
             </div>
           </motion.div>
 
@@ -200,8 +215,8 @@ const Footer = () => {
             </div>
             <div>
               <h4 className="font-semibold mb-1">Email Us</h4>
-              <p className="text-gray-400">info@afhomes.ae</p>
-              <p className="text-gray-400">support@afhomes.ae</p>
+              <p className="text-gray-400">admin@afhomes.ae</p>
+              <p className="text-gray-400">arsalan@afhomes.ae</p>
             </div>
           </motion.div>
 
@@ -230,8 +245,8 @@ const Footer = () => {
             </div>
             <div>
               <h4 className="font-semibold mb-1">Visit Us</h4>
-              <p className="text-gray-400">Dubai, UAE</p>
-              <p className="text-gray-400">Available 24/7</p>
+              <p className="text-gray-400">Al Wasl Building, Workspace Downtown, Office 47, Sheikh Zayed Road, Dubai, UAE</p>
+              <p className="text-gray-400 text-xs">Available Monday to Saturday (10:00 AM - 7:00 PM)</p>
             </div>
           </motion.div>
         </motion.div>
@@ -245,7 +260,7 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <p className="text-gray-500 text-sm mb-4 md:mb-0">
-            &copy; {currentYear} AF Homes. All rights reserved.
+            &copy; {currentYear} A&F Homes. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
             <Link
