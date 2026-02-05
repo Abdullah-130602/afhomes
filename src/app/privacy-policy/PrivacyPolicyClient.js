@@ -144,7 +144,7 @@ const PrivacyPolicyClient = () => {
               className="border-b border-slate-200 px-6 md:px-10 pt-8 pb-6"
             >
               <p className="text-sm font-medium tracking-wide text-slate-500 uppercase">
-                Effective for A&F Homes digital properties
+                Effective for A&F Homes Real Estate Dubai
               </p>
               <p className="mt-2 text-sm text-slate-500">
                 Last updated 25 January {currentYear}
@@ -188,7 +188,7 @@ const PrivacyPolicyClient = () => {
                 className="border-b border-slate-200 px-6 md:px-10 pt-8 pb-6"
               >
                 <p className="text-sm font-medium tracking-wide text-slate-500 uppercase">
-                  Effective for A&F Homes digital properties
+                  Effective for A&F Homes Real Estate Dubai
                 </p>
                 <p className="mt-2 text-sm text-slate-500">
                   Last updated 25 January {currentYear}
