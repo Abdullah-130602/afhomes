@@ -27,7 +27,7 @@ const sections = [
   {
     title: "1. Who we are",
     body: [
-      "AF Homes is a real estate agency based in Dubai, UAE. We assist our customers in the purchase, sale, and rental of properties for residential and investment purposes.",
+      "A&F Homes is a real estate agency based in Dubai, UAE. We assist our customers in the purchase, sale, and rental of properties for residential and investment purposes.",
       "This privacy policy will cover the collection, use, and protection of your personal data when you use our website, communicate with us, or view our adverts on platforms such as Meta (Facebook and Instagram), and other ad networks.",
     ],
   },
@@ -126,7 +126,7 @@ const PrivacyPolicyClient = () => {
       <main className="min-h-screen bg-background">
         <LayoutHero
           title="Privacy Policy"
-          subTitle="How AF Homes uses and protects your data"
+          subTitle="How A&F Homes uses and protects your data"
           description="Learn how we collect, use and safeguard your information when you browse our website, contact us or interact with our ads on Meta and other platforms."
           heroBg={heroBg}
         />
@@ -144,7 +144,7 @@ const PrivacyPolicyClient = () => {
               className="border-b border-slate-200 px-6 md:px-10 pt-8 pb-6"
             >
               <p className="text-sm font-medium tracking-wide text-slate-500 uppercase">
-                Effective for AF Homes digital properties
+                Effective for A&F Homes digital properties
               </p>
               <p className="mt-2 text-sm text-slate-500">
                 Last updated 25 January {currentYear}
@@ -188,7 +188,7 @@ const PrivacyPolicyClient = () => {
                 className="border-b border-slate-200 px-6 md:px-10 pt-8 pb-6"
               >
                 <p className="text-sm font-medium tracking-wide text-slate-500 uppercase">
-                  Effective for AF Homes digital properties
+                  Effective for A&F Homes digital properties
                 </p>
                 <p className="mt-2 text-sm text-slate-500">
                   Last updated 25 January {currentYear}
