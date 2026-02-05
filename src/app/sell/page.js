@@ -1,8 +1,17 @@
 import Layout from "../layout/index";
 
 export const metadata = {
-  title: "Sell Your Property | AF Homes",
-  description: "Sell your property with AF Homes. Expert guidance and best market value guaranteed.",
+  title: "Sell Your Property in Dubai | AF Homes",
+  description:
+    "Sell your apartment or villa in Dubai with AF Homes. Professional valuation, marketing and negotiation to achieve the best market price.",
+  keywords: [
+    "sell property Dubai",
+    "list my property Dubai",
+    "real estate valuation Dubai",
+  ],
+  alternates: {
+    canonical: "https://www.afhomes.ae/sell",
+  },
 };
 
 export default function SellPage() {

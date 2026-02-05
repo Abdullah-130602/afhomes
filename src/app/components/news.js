@@ -1,8 +1,8 @@
-'use client'
+"use client"
 
-import React from 'react'
-import { motion } from 'framer-motion'
-import Image from 'next/image'
+import React from "react"
+import { motion } from "framer-motion"
+import Link from "next/link"
 
 const News = () => {
   const newsArticles = [
@@ -68,14 +68,17 @@ const News = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-black">News & Insights</h2>
-          <motion.a
-            href="#"
-            className="text-black font-semibold text-sm tracking-widest uppercase hover:text-gray-600 transition-colors"
-            whileHover={{ x: 5 }}
-          >
-            GO TO ALL NEWS
-          </motion.a>
+          <h2 className="text-2xl md:text-3xl font-bold text-black">
+            News &amp; Insights
+          </h2>
+          <motion.div whileHover={{ x: 5 }}>
+            <Link
+              href="/insights"
+              className="text-black font-semibold text-sm tracking-widest uppercase hover:text-gray-600 transition-colors"
+            >
+              Go to all insights
+            </Link>
+          </motion.div>
         </motion.div>
 
         {/* News Grid */}
@@ -102,13 +105,13 @@ const News = () => {
               </div>
 
               <motion.h3
-                className="text-lg font-semibold text-black mb-2 leading-tight group-hover:text-gray-700 transition-colors"
+                className="text-sm font-medium text-black mb-2 leading-tight group-hover:text-gray-700 transition-colors line-clamp-2"
                 whileHover={{ x: 5 }}
               >
                 {article.title}
               </motion.h3>
 
-              <p className="text-sm text-gray-600">{article.date}</p>
+              <p className="text-xs text-gray-600">{article.date}</p>
             </motion.div>
           ))}
         </motion.div>

@@ -1,52 +1,52 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { FaChevronLeft, FaChevronRight, FaStar } from 'react-icons/fa'
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa";
 
 const Testimonials = () => {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const testimonials = [
     {
       id: 1,
-      name: 'Arjun Sood',
-      date: '25 January 2026',
+      name: "Arjun Sood",
+      date: "25 January 2026",
       rating: 5,
-      text: 'Nivine is very knowledgeable about the real estate market of Dubai and a thorough professional. I really liked the fact that she never tried to push a product to me and acted as a true advisor, guiding me as I was settling in the city.',
+      text: "Nivine is very knowledgeable about the real estate market of Dubai and a thorough professional. I really liked the fact that she never tried to push a product to me and acted as a true advisor, guiding me as I was settling in the city.",
     },
     {
       id: 2,
-      name: 'Aniket Bakshi',
-      date: '24 January 2026',
+      name: "Aniket Bakshi",
+      date: "24 January 2026",
       rating: 5,
-      text: 'Very good and professional company Alpa from sales provided a smooth experience for onboarding and great customer service',
+      text: "Very good and professional company Alpa from sales provided a smooth experience for onboarding and great customer service",
     },
     {
       id: 3,
-      name: 'Fadi Ghosaini',
-      date: '22 January 2026',
+      name: "Fadi Ghosaini",
+      date: "22 January 2026",
       rating: 5,
-      text: 'Excellent service from Haus & Haus. Aly was particularly good at understanding our needs and at utilising her colleagues; Elliot, to find the right property for us. Very pleasant and professional experience from Aly and her colleague Elliot.',
+      text: "Excellent service from Haus & Haus. Aly was particularly good at understanding our needs and at utilising her colleagues; Elliot, to find the right property for us. Very pleasant and professional experience from Aly and her colleague Elliot.",
     },
     {
       id: 4,
-      name: 'Sarah Johnson',
-      date: '20 January 2026',
+      name: "Sarah Johnson",
+      date: "20 January 2026",
       rating: 5,
-      text: 'Outstanding experience from start to finish. The team was extremely responsive and helpful throughout the entire process. Highly recommend!',
+      text: "Outstanding experience from start to finish. The team was extremely responsive and helpful throughout the entire process. Highly recommend!",
     },
-  ]
+  ];
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
-  }
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+  };
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-    )
-  }
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1,
+    );
+  };
 
   const containerVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -58,27 +58,27 @@ const Testimonials = () => {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
-  }
+  };
 
   const visibleTestimonials = [
     testimonials[currentIndex],
     testimonials[(currentIndex + 1) % testimonials.length],
     testimonials[(currentIndex + 2) % testimonials.length],
-  ]
+  ];
 
   return (
-    <section className="py-16 md:py-20 bg-gray-50">
+    <section className="py-20 md:py-20 bg-gray-50">
       <motion.div
         className="max-w-7xl mx-auto px-6"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: '-100px' }}
+        viewport={{ once: true, margin: "-100px" }}
       >
         {/* Header */}
         <motion.div className="text-center mb-12" variants={itemVariants}>
@@ -86,8 +86,12 @@ const Testimonials = () => {
             Client testimonials
           </h2>
           <p className="text-base md:text-lg text-gray-600">
-            Hear from our satisfied clients who have experienced exceptional service with haus & haus:{' '}
-            <a href="#" className="underline font-semibold text-black hover:text-gray-700">
+            Hear from our satisfied clients who have experienced exceptional
+            service with haus & haus:{" "}
+            <a
+              href="#"
+              className="underline font-semibold text-black hover:text-gray-700"
+            >
               More Reviews
             </a>
           </p>
@@ -110,7 +114,9 @@ const Testimonials = () => {
                   <h3 className="text-lg font-bold text-black mb-1">
                     {testimonial.name}
                   </h3>
-                  <p className="text-sm text-gray-500 mb-3">{testimonial.date}</p>
+                  <p className="text-sm text-gray-500 mb-3">
+                    {testimonial.date}
+                  </p>
 
                   {/* Rating */}
                   <div className="flex gap-1 mb-4">
@@ -159,7 +165,7 @@ const Testimonials = () => {
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`w-2 h-2 rounded-full transition-colors ${
-                  index === currentIndex ? 'bg-black' : 'bg-gray-300'
+                  index === currentIndex ? "bg-black" : "bg-gray-300"
                 }`}
                 whileHover={{ scale: 1.2 }}
               />
@@ -168,7 +174,7 @@ const Testimonials = () => {
         </div>
       </motion.div>
     </section>
-  )
-}
+  );
+};
 
-export default Testimonials
+export default Testimonials;

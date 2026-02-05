@@ -1,8 +1,17 @@
 import Layout from "../layout/index";
 
 export const metadata = {
-  title: "Rent Properties | AF Homes",
-  description: "Discover premium rental properties in Dubai with AF Homes.",
+  title: "Rent Apartments & Villas in Dubai | AF Homes",
+  description:
+    "Find premium apartments, villas and townhouses for rent in Dubai. AF Homes helps you secure the right home at the right price.",
+  keywords: [
+    "rent apartment Dubai",
+    "Dubai villas for rent",
+    "properties for rent Dubai",
+  ],
+  alternates: {
+    canonical: "https://www.afhomes.ae/rent",
+  },
 };
 
 export default function RentPage() {

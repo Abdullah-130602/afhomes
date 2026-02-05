@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./navbar";
-import Footer from "../components/footer";
+import Footer from "./footer";
 
 const index = ({ children }) => {
   return (

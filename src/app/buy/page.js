@@ -1,8 +1,18 @@
 import Layout from "../layout/index";
 
 export const metadata = {
-  title: "Buy Properties | AF Homes",
-  description: "Find your dream property with AF Homes. Browse our exclusive listings in Dubai.",
+  title: "Buy Property in Dubai | AF Homes",
+  description:
+    "Browse apartments, villas and townhouses for sale in Dubai with AF Homes. Expert advice for end users and investors buying property in the UAE.",
+  keywords: [
+    "buy property Dubai",
+    "Dubai apartments for sale",
+    "Dubai villas for sale",
+    "investment property Dubai",
+  ],
+  alternates: {
+    canonical: "https://www.afhomes.ae/buy",
+  },
 };
 
 export default function BuyPage() {

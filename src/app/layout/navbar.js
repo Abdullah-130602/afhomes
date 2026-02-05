@@ -7,158 +7,157 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import whiteLogo from "../../assets/logo.png";
 import logoBlack from "../../assets/logoBlack.png";
-import { FaWhatsapp, FaBars, FaTimes } from "react-icons/fa";
-import { Drawer } from "antd"; 
+import { FaWhatsapp, FaBars } from "react-icons/fa";
+import { Drawer } from "antd";
+import { MdHome, MdOutlineSell } from "react-icons/md";
+import { BiDollarCircle } from "react-icons/bi";
+import { TbHeartHandshake } from "react-icons/tb";
+import { CgInsights } from "react-icons/cg";
+import { LuUserSearch } from "react-icons/lu";
+import { IoCallOutline } from "react-icons/io5";
+
+const underlineVariants = {
+  rest: { scaleX: 0 },
+  hover: { scaleX: 1 },
+};
+
+const SCROLL_THRESHOLD = 50; // change this to control when navbar switches
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const pathname = usePathname();
-  const isHomePage = pathname === "/";
+
+  // pathname kept for potential active-link logic or future needs
+  const pathname = usePathname() ?? "";
+
+  // Transparent when at top of the page (applies to all routes)
+  const isTransparent = !isScrolled;
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > SCROLL_THRESHOLD);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    // Set initial scroll state (in case page loads scrolled)
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const navItems = [
+    { name: "Home", href: "/", icon: <MdHome size={20} /> },
+    { name: "Buy", href: "/buy", icon: <TbHeartHandshake size={20} /> },
+    { name: "Rent", href: "/rent", icon: <MdOutlineSell size={20} /> },
+    { name: "Sell", href: "/sell", icon: <BiDollarCircle size={20} /> },
+    { name: "Insights", href: "/insights", icon: <CgInsights size={20} /> },
+    { name: "Why Us", href: "/why-us", icon: <LuUserSearch size={20} /> },
+    { name: "Contact", href: "/contact", icon: <IoCallOutline size={20} /> },
+  ];
+
+  // animated background color
+  const navBg = isTransparent ? "rgba(0, 0, 0, 0)" : "#00263a";
+  // keep text white for both transparent (over hero image) and dark-blue states
+  const textColor = "#ffffff";
+  // choose white logo by default (works over hero & dark-blue). If you later switch
+  // to a light bg, swap to logoBlack accordingly.
+  const logoToUse = whiteLogo;
+
   return (
     <motion.nav
-      className="fixed top-0 left-0 right-0 z-50 w-full"
-      animate={{
-        backgroundColor: isHomePage
-          ? isScrolled
-            ? "rgba(255, 255, 255, 0.9)"
-            : "rgba(0, 0, 0, 0.0)"
-          : "rgba(255, 255, 255, 0.9)",
-      }}
-      transition={{
-        duration: 0.3,
-        ease: "easeInOut",
-      }}
+      className="fixed top-0 left-0 right-0 z-9999 w-full"
+      animate={{ backgroundColor: navBg }}
+      transition={{ duration: 0.25, ease: "easeInOut" }}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 py-4 md:py-5 flex justify-between items-center">
         {/* Logo */}
         <motion.div
-          className="text-2xl font-bold"
-          animate={{
-            color: isHomePage
-              ? isScrolled
-                ? "#000000"
-                : "#ffffff"
-              : "#000000",
-          }}
-          transition={{ duration: 0.3 }}
+          className="text-2xl font-bold flex items-center"
+          animate={{ color: textColor }}
+          transition={{ duration: 0.25 }}
         >
           <Link href="/">
-            {isHomePage ? (
-              isScrolled ? (
-                <Image
-                  src={logoBlack}
-                  alt="AF Homes"
-                  width={112}
-                  height={40}
-                  className="h-10 w-auto"
-                />
-              ) : (
-                <Image
-                  src={whiteLogo}
-                  alt="AF Homes"
-                  width={112}
-                  height={40}
-                  className="h-10 w-auto"
-                />
-              )
-            ) : (
+            <div className="inline-block">
               <Image
-                src={logoBlack}
+                src={logoToUse}
                 alt="AF Homes"
                 width={112}
                 height={40}
                 className="h-10 w-auto"
+                priority
               />
-            )}
+            </div>
           </Link>
         </motion.div>
 
-        {/* Navigation Links */}
+        {/* Desktop Navigation */}
         <ul className="hidden md:flex gap-10 items-center">
-          {[
-            { name: "Home", href: "/" },
-            { name: "Buy", href: "/buy" },
-            { name: "Rent", href: "/rent" },
-            { name: "Sell", href: "/sell" },
-            { name: "Insights", href: "/insights" },
-            { name: "Why Us", href: "/why-us" },
-            { name: "Contact", href: "/contact" },
-          ].map((item) => (
-            <li key={item.name}>
+          {navItems.map((item) => (
+            <motion.li
+              key={item.name}
+              className="relative"
+              initial="rest"
+              whileHover="hover"
+              animate="rest"
+            >
               <Link href={item.href}>
-                <motion.span
-                  className="font-medium transition-colors tracking-wide cursor-pointer"
-                  animate={{
-                    color: isHomePage
-                      ? isScrolled
-                        ? "#374151"
-                        : "#ffffff"
-                      : "#374151",
-                  }}
-                  transition={{ duration: 0.3 }}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  {item.name}
-                </motion.span>
+                <div className="inline-block relative pb-1">
+                  <motion.span
+                    className="font-light tracking-wide cursor-pointer"
+                    animate={{ color: textColor }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    {item.name}
+                  </motion.span>
+                </div>
               </Link>
-              </li>
-            ),
-          )}
+            </motion.li>
+          ))}
         </ul>
-        <div className="flex items-center gap-2">
-          {/* CTA Button */}
-          <motion.button
-            className="px-4 sm:px-6 py-2 rounded md:rounded-full font-medium transition-all flex items-center gap-1 sm:gap-2 text-xs sm:text-base whitespace-nowrap"
-            animate={{
-              backgroundColor: isHomePage
-                ? isScrolled
-                  ? "#25D366"
-                  : "#25D366"
-                : "#25D366",
-              color: "#ffffff",
-            }}
-            transition={{ duration: 0.3 }}
-            whileHover={{ scale: 1.05 }}
-          >
-            <FaWhatsapp />
-            <span className="sm:inline">Get in Touch</span>
-          </motion.button>
 
-          {/* Mobile Menu Toggle */}
+        {/* Right actions: CTA (desktop) + Mobile menu button */}
+        <div className="flex items-center gap-3">
+          {/* CTA (visible on md+) */}
+          <div className="hidden md:flex items-center gap-2">
+            <motion.a
+              href="https://wa.me/your-number"
+              className="px-4 py-2 rounded-md font-medium transition-all flex items-center gap-2 text-sm whitespace-nowrap"
+              animate={{
+                backgroundColor: "#ffffff",
+                color: "#075E54",
+              }}
+              transition={{ duration: 0.25 }}
+              whileHover={{ scale: 1.03 }}
+            >
+              <FaWhatsapp />
+              <span>Get in Touch</span>
+            </motion.a>
+          </div>
+
+          {/* Mobile menu button */}
           <button
             onClick={() => setDrawerOpen(true)}
-            className="md:hidden p-2 text-white hover:text-gray-300 transition-colors"
-            style={{
-              color: isHomePage
-                ? isScrolled
-                  ? "#000000"
-                  : "#ffffff"
-                : "#000000",
-            }}
+            className="md:hidden p-2 rounded-full hover:bg-white/10 transition-colors"
+            aria-label="Open menu"
+            style={{ color: textColor }}
           >
-            <FaBars size={24} />
+            <FaBars size={20} />
           </button>
         </div>
       </div>
 
       {/* Mobile Drawer Menu */}
       <Drawer
-        title="Menu"
+        title={
+          <div className="flex items-center">
+            <Image src={logoBlack} alt="AF Homes" className="h-10 w-auto" />
+          </div>
+        }
         placement="right"
         onClose={() => setDrawerOpen(false)}
         open={drawerOpen}
         size={280}
+        // antd v4 used `styles` differently; if you encounter issues remove `styles` or adapt.
         styles={{
           header: {
             borderBottom: "1px solid #e5e7eb",
@@ -166,28 +165,22 @@ const Navbar = () => {
         }}
       >
         <div className="flex flex-col gap-4">
-          {[
-            { name: "Home", href: "/" },
-            { name: "Buy", href: "/buy" },
-            { name: "Rent", href: "/rent" },
-            { name: "Sell", href: "/sell" },
-            { name: "Insights", href: "/insights" },
-            { name: "Why Us", href: "/why-us" },
-            { name: "Contact", href: "/contact" },
-          ].map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="text-gray-800 font-medium hover:text-green-500 transition-colors py-2 border-b border-gray-100"
-              onClick={() => setDrawerOpen(false)}
-            >
-              {item.name}
+          {navItems.map((item) => (
+            <Link key={item.name} href={item.href}>
+              <p
+                className="text-black font-normal py-2 border-b border-gray-100 flex items-center gap-3"
+                onClick={() => setDrawerOpen(false)}
+                style={{ color: "#000" }}
+              >
+                {item.icon}
+                <span>{item.name}</span>
+              </p>
             </Link>
           ))}
           <motion.button
-            className="mt-4 px-6 py-2 rounded-full font-medium transition-all flex items-center justify-center gap-2 w-full bg-green-500 text-white hover:bg-green-600"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="mt-4 px-6 py-2 rounded-md font-medium transition-all flex items-center justify-center gap-2 w-full bg-green-500 text-white hover:bg-green-600 cursor-pointer"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
             onClick={() => setDrawerOpen(false)}
           >
             <FaWhatsapp />
@@ -196,18 +189,7 @@ const Navbar = () => {
         </div>
       </Drawer>
 
-      {/* Shadow effect when scrolled */}
-      <motion.div
-        className="absolute bottom-0 left-0 right-0 h-px bg-gray-200"
-        animate={{
-          opacity: isHomePage
-            ? isScrolled
-              ? 1
-              : 0
-            : 1,
-        }}
-        transition={{ duration: 0.3 }}
-      />
+      {/* hairline removed to eliminate thin cyan line */}
     </motion.nav>
   );
 };

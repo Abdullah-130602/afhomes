@@ -126,7 +126,7 @@ const FeaturedProperties = () => {
   const currentProperties = properties[activeTab];
 
   return (
-    <section className="py-24 px-6 bg-white">
+    <section className="py-20 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -231,7 +231,7 @@ const FeaturedProperties = () => {
                     </h3>
 
                     {/* Price */}
-                    <p className="text-xl font-bold text-[#00263a] mb-4">
+                    <p className="text-xl font-bold text-[#006aa2] mb-4">
                       {property.price}
                     </p>
 
@@ -264,7 +264,7 @@ const FeaturedProperties = () => {
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex-1 flex items-center justify-center gap-2 text-xs text-black font-medium bg-gray-200 p-2 rounded-md hover:text-gray-700 transition-colors"
+                        className="flex-1 flex items-center justify-center gap-2 text-xs text-black font-medium bg-gray-200 p-2 rounded-md hover:text-[#006aa2] transition-colors"
                       >
                         <MdCall />
                         Call
@@ -272,7 +272,7 @@ const FeaturedProperties = () => {
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex-1 flex items-center justify-center gap-2 text-xs text-black font-medium bg-gray-200 p-2 rounded-md hover:text-gray-700 transition-colors"
+                        className="flex-1 flex items-center justify-center gap-2 text-xs text-black font-medium bg-gray-200 p-2 rounded-md hover:text-[#006aa2] transition-colors"
                       >
                         <MdMail />
                         Email
@@ -280,7 +280,7 @@ const FeaturedProperties = () => {
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex-1 flex items-center justify-center gap-2 text-xs text-black font-medium bg-gray-200 p-2 rounded-md hover:text-gray-700 transition-colors"
+                        className="flex-1 flex items-center justify-center gap-2 text-xs text-black font-medium bg-gray-200 p-2 rounded-md hover:text-[#006aa2] transition-colors"
                       >
                         <MdWhatsapp />
                         Whatsapp
